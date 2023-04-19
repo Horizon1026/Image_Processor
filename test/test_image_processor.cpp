@@ -5,6 +5,17 @@
 
 std::string src_image_path = "../example/raw_image.png";
 
+void TestDefault(const Image &src_image, Image &dst_image) {
+    LogInfo(YELLOW ">> Test default image processor." << RESET_COLOR);
+
+    IMAGE_PROCESSOR::ImageProcessor processor;
+    processor.Process(src_image, dst_image);
+
+    cv::Mat show_image(dst_image.rows(), dst_image.cols(), CV_8UC1, dst_image.data());
+    cv::imshow("default process", show_image);
+    cv::waitKey(0);
+}
+
 void TestCensus(const Image &src_image, Image &dst_image) {
     LogInfo(YELLOW ">> Test census image processor." << RESET_COLOR);
 
@@ -12,7 +23,7 @@ void TestCensus(const Image &src_image, Image &dst_image) {
     processor.Process(src_image, dst_image);
 
     cv::Mat show_image(dst_image.rows(), dst_image.cols(), CV_8UC1, dst_image.data());
-    cv::imshow("census", show_image);
+    cv::imshow("census process", show_image);
     cv::waitKey(0);
 }
 
@@ -26,6 +37,7 @@ int main() {
     cv::imshow("raw image", cv_src_image);
     cv::waitKey(0);
 
+    TestDefault(src_image, dst_image);
     TestCensus(src_image, dst_image);
 
     return 0;

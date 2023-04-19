@@ -13,12 +13,12 @@ public:
     virtual ~ImageProcessor() = default;
     ImageProcessor(const ImageProcessor &image_processor) = delete;
 
-    virtual bool Process(const Image &src_image, Image &dst_image) = 0;
+    virtual bool Process(const Image &src_image, Image &dst_image);
 
     Mat &kernel() { return kernel_; }
 
 private:
-    Mat kernel_;
+    Mat kernel_ = Mat3::Ones();
 };
 
 }
