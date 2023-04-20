@@ -27,7 +27,7 @@ void TestCensus(const Image &src_image, Image &dst_image) {
     cv::waitKey(0);
 }
 
-int main() {
+int main(int argc, char **argv) {
     LogInfo(YELLOW ">> Test image processor." << RESET_COLOR);
 
     cv::Mat cv_src_image = cv::imread(src_image_path, 0);
