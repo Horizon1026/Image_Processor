@@ -1,16 +1,16 @@
 #include "image_processor.h"
-#include "log_api.h"
+#include "log_report.h"
 
 namespace IMAGE_PROCESSOR {
 
 bool ImageProcessor::Process(const Image &src_image, Image &dst_image) {
     if (kernel_.rows() % 2 == 0 || kernel_.cols() % 2 == 0) {
-        LogInfo(">> ImageProcessor : kernel size must be odd.");
+        ReportInfo(">> ImageProcessor : kernel size must be odd.");
         return false;
     }
 
     if (src_image.data() == nullptr || dst_image.data() == nullptr) {
-        LogInfo(">> ImageProcessor : source image or destination image is nullptr.");
+        ReportInfo(">> ImageProcessor : source image or destination image is nullptr.");
         return false;
     }
 

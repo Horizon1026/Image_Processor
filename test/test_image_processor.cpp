@@ -1,12 +1,12 @@
 #include "census.h"
-#include "log_api.h"
+#include "log_report.h"
 
 #include "opencv2/opencv.hpp"
 
 std::string src_image_path = "../example/raw_image.png";
 
 void TestDefault(const Image &src_image, Image &dst_image) {
-    LogInfo(YELLOW ">> Test default image processor." << RESET_COLOR);
+    ReportInfo(YELLOW ">> Test default image processor." << RESET_COLOR);
 
     IMAGE_PROCESSOR::ImageProcessor processor;
     processor.Process(src_image, dst_image);
@@ -17,7 +17,7 @@ void TestDefault(const Image &src_image, Image &dst_image) {
 }
 
 void TestCensus(const Image &src_image, Image &dst_image) {
-    LogInfo(YELLOW ">> Test census image processor." << RESET_COLOR);
+    ReportInfo(YELLOW ">> Test census image processor." << RESET_COLOR);
 
     IMAGE_PROCESSOR::CensusProcessor processor;
     processor.Process(src_image, dst_image);
@@ -28,7 +28,7 @@ void TestCensus(const Image &src_image, Image &dst_image) {
 }
 
 int main(int argc, char **argv) {
-    LogInfo(YELLOW ">> Test image processor." << RESET_COLOR);
+    ReportInfo(YELLOW ">> Test image processor." << RESET_COLOR);
 
     cv::Mat cv_src_image = cv::imread(src_image_path, 0);
     cv::Mat cv_dst_image = cv::imread(src_image_path, 0);
