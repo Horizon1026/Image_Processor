@@ -12,8 +12,21 @@ if ( NOT TARGET lib_slam_utility_log )
     add_subdirectory( ${SLAM_UTILITY_PATH}/log ${PROJECT_SOURCE_DIR}/build/lib_slam_utility_log )
 endif()
 
-add_library( lib_image_processor ${AUX_SRC_IMAGE_PROCESSOR} )
-target_include_directories( lib_image_processor PUBLIC . )
+# Add all methods.
+aux_source_directory( census SRC_METHOD_CENSUS )
+aux_source_directory( s_census SRC_METHOD_S_CENSUS )
+
+# Link the library.
+add_library( lib_image_processor
+    ${AUX_SRC_IMAGE_PROCESSOR}
+    ${SRC_METHOD_CENSUS}
+    ${SRC_METHOD_S_CENSUS}
+)
+target_include_directories( lib_image_processor PUBLIC
+    .
+    ./census
+    ./s_census
+)
 target_link_libraries( lib_image_processor
     lib_slam_utility_datatype
     lib_slam_utility_operate
