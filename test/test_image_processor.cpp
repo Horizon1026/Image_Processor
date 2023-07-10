@@ -6,7 +6,7 @@
 
 std::string src_image_path = "../example/raw_image.png";
 
-void TestDefault(const Image &src_image, Image &dst_image) {
+void TestDefault(const GrayImage &src_image, GrayImage &dst_image) {
     ReportInfo(YELLOW ">> Test default image processor." << RESET_COLOR);
 
     IMAGE_PROCESSOR::ImageProcessor processor;
@@ -17,7 +17,7 @@ void TestDefault(const Image &src_image, Image &dst_image) {
     cv::waitKey(0);
 }
 
-void TestCensus(const Image &src_image, Image &dst_image) {
+void TestCensus(const GrayImage &src_image, GrayImage &dst_image) {
     ReportInfo(YELLOW ">> Test census image processor." << RESET_COLOR);
 
     IMAGE_PROCESSOR::CensusProcessor processor;
@@ -28,7 +28,7 @@ void TestCensus(const Image &src_image, Image &dst_image) {
     cv::waitKey(0);
 }
 
-void TestSCensus(const Image &src_image, Image &dst_image) {
+void TestSCensus(const GrayImage &src_image, GrayImage &dst_image) {
     ReportInfo(YELLOW ">> Test census image processor." << RESET_COLOR);
 
     IMAGE_PROCESSOR::SCensusProcessor processor;
@@ -44,8 +44,8 @@ int main(int argc, char **argv) {
 
     cv::Mat cv_src_image = cv::imread(src_image_path, 0);
     cv::Mat cv_dst_image = cv::imread(src_image_path, 0);
-    Image src_image(cv_src_image.data, cv_src_image.rows, cv_src_image.cols);
-    Image dst_image(cv_dst_image.data, cv_dst_image.rows, cv_dst_image.cols);
+    GrayImage src_image(cv_src_image.data, cv_src_image.rows, cv_src_image.cols);
+    GrayImage dst_image(cv_dst_image.data, cv_dst_image.rows, cv_dst_image.cols);
     cv::imshow("raw image", cv_src_image);
     cv::waitKey(0);
 

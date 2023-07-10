@@ -2,7 +2,7 @@
 
 namespace IMAGE_PROCESSOR {
 
-bool SCensusProcessor::Process(const Image &src_image, Image &dst_image) {
+bool SCensusProcessor::Process(const GrayImage &src_image, GrayImage &dst_image) {
     if (src_image.data() == nullptr || dst_image.data() == nullptr) {
         return false;
     }

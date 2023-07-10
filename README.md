@@ -1,4 +1,4 @@
-# Image Processor
+# GrayImage Processor
 Intergration of some simple image processor method.
 
 # Components

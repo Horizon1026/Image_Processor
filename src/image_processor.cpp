@@ -3,7 +3,7 @@
 
 namespace IMAGE_PROCESSOR {
 
-bool ImageProcessor::Process(const Image &src_image, Image &dst_image) {
+bool ImageProcessor::Process(const GrayImage &src_image, GrayImage &dst_image) {
     if (kernel_.rows() % 2 == 0 || kernel_.cols() % 2 == 0) {
         ReportInfo(">> ImageProcessor : kernel size must be odd.");
         return false;

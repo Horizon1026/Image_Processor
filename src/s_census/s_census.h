@@ -12,7 +12,7 @@ public:
     virtual ~SCensusProcessor() = default;
     SCensusProcessor(const SCensusProcessor &image_processor) = delete;
 
-    virtual bool Process(const Image &src_image, Image &dst_image) override;
+    virtual bool Process(const GrayImage &src_image, GrayImage &dst_image) override;
 
 private:
     std::array<std::array<int32_t, 2>, 8> index_offset_ = {{
