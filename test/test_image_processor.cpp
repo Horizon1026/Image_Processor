@@ -1,8 +1,9 @@
 #include "census.h"
 #include "s_census.h"
-#include "log_report.h"
 
-#include "opencv2/opencv.hpp"
+#include "log_report.h"
+#include "slam_memory.h"
+#include "visualizor.h"
 
 std::string src_image_path = "../example/raw_image.png";
 
@@ -12,9 +13,7 @@ void TestDefault(const GrayImage &src_image, GrayImage &dst_image) {
     IMAGE_PROCESSOR::ImageProcessor processor;
     processor.Process(src_image, dst_image);
 
-    cv::Mat show_image(dst_image.rows(), dst_image.cols(), CV_8UC1, dst_image.data());
-    cv::imshow("default process", show_image);
-    cv::waitKey(0);
+    Visualizor::ShowImage("default process", dst_image);
 }
 
 void TestCensus(const GrayImage &src_image, GrayImage &dst_image) {
@@ -23,9 +22,7 @@ void TestCensus(const GrayImage &src_image, GrayImage &dst_image) {
     IMAGE_PROCESSOR::CensusProcessor processor;
     processor.Process(src_image, dst_image);
 
-    cv::Mat show_image(dst_image.rows(), dst_image.cols(), CV_8UC1, dst_image.data());
-    cv::imshow("census process", show_image);
-    cv::waitKey(0);
+    Visualizor::ShowImage("census process", dst_image);
 }
 
 void TestSCensus(const GrayImage &src_image, GrayImage &dst_image) {
@@ -34,24 +31,22 @@ void TestSCensus(const GrayImage &src_image, GrayImage &dst_image) {
     IMAGE_PROCESSOR::SCensusProcessor processor;
     processor.Process(src_image, dst_image);
 
-    cv::Mat show_image(dst_image.rows(), dst_image.cols(), CV_8UC1, dst_image.data());
-    cv::imshow("s-census process", show_image);
-    cv::waitKey(0);
+    Visualizor::ShowImage("s-census process", dst_image);
 }
 
 int main(int argc, char **argv) {
     ReportInfo(YELLOW ">> Test image processor." << RESET_COLOR);
 
-    cv::Mat cv_src_image = cv::imread(src_image_path, 0);
-    cv::Mat cv_dst_image = cv::imread(src_image_path, 0);
-    GrayImage src_image(cv_src_image.data, cv_src_image.rows, cv_src_image.cols);
-    GrayImage dst_image(cv_dst_image.data, cv_dst_image.rows, cv_dst_image.cols);
-    cv::imshow("raw image", cv_src_image);
-    cv::waitKey(0);
+    GrayImage src_image;
+    Visualizor::LoadImage(src_image_path, src_image);
+
+    uint8_t *dst_buf = (uint8_t *)SlamMemory::Malloc(src_image.rows() * src_image.cols() * sizeof(uint8_t));
+    GrayImage dst_image(dst_buf, src_image.rows(), src_image.cols(), true);
 
     TestDefault(src_image, dst_image);
     TestCensus(src_image, dst_image);
     TestSCensus(src_image, dst_image);
 
+    Visualizor::WaitKey(0);
     return 0;
 }
