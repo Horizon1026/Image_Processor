@@ -12,10 +12,10 @@ if ( NOT TARGET lib_image_processor )
     add_subdirectory( src ${PROJECT_SOURCE_DIR}/build/lib_image_processor )
 endif()
 
-# Add visualizor of slam utility.
-set( SLAM_UTILITY_PATH ${PROJECT_SOURCE_DIR}/../Slam_Utility/src )
-if ( NOT TARGET lib_slam_utility_visualize )
-    add_subdirectory( ${SLAM_UTILITY_PATH}/visualize ${PROJECT_SOURCE_DIR}/build/lib_slam_utility_visualize )
+# Add visualizor.
+set( VISUALIZOR_PATH ${PROJECT_SOURCE_DIR}/../Visualizor2D )
+if ( NOT TARGET lib_slam_visualize )
+    add_subdirectory( ${VISUALIZOR_PATH}/src ${PROJECT_SOURCE_DIR}/build/lib_slam_visualize )
 endif()
 
 add_executable( test_image_processor
@@ -23,5 +23,5 @@ add_executable( test_image_processor
 )
 target_link_libraries( test_image_processor
     lib_image_processor
-    lib_slam_utility_visualize
+    lib_slam_visualize
 )
