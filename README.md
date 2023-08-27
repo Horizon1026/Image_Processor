@@ -9,7 +9,7 @@ Intergration of some simple image processor method.
 - [ ] Gauss transform
 
 # Dependence
-Slam_Utility
+- Slam_Utility
 
 # Tips
 - 欢迎一起交流学习，不同意商用；
