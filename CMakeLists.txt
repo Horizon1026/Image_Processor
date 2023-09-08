@@ -14,8 +14,8 @@ endif()
 
 # Add visualizor.
 set( VISUALIZOR_PATH ${PROJECT_SOURCE_DIR}/../Visualizor2D )
-if ( NOT TARGET lib_slam_visualize )
-    add_subdirectory( ${VISUALIZOR_PATH}/src ${PROJECT_SOURCE_DIR}/build/lib_slam_visualize )
+if ( NOT TARGET lib_image_visualizor )
+    add_subdirectory( ${VISUALIZOR_PATH}/src ${PROJECT_SOURCE_DIR}/build/lib_image_visualizor )
 endif()
 
 add_executable( test_image_processor
@@ -23,5 +23,5 @@ add_executable( test_image_processor
 )
 target_link_libraries( test_image_processor
     lib_image_processor
-    lib_slam_visualize
+    lib_image_visualizor
 )
