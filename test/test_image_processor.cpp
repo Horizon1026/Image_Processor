@@ -5,6 +5,8 @@
 #include "slam_memory.h"
 #include "visualizor.h"
 
+using namespace SLAM_VISUALIZOR;
+
 std::string src_image_path = "../example/raw_image.png";
 
 void TestDefault(const GrayImage &src_image, GrayImage &dst_image) {
