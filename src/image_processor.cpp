@@ -1,5 +1,5 @@
 #include "image_processor.h"
-#include "log_report.h"
+#include "slam_log_reporter.h"
 
 namespace IMAGE_PROCESSOR {
 

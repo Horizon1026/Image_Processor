@@ -1,7 +1,7 @@
 #include "census.h"
 #include "s_census.h"
 
-#include "log_report.h"
+#include "slam_log_reporter.h"
 #include "slam_memory.h"
 #include "visualizor.h"
 
