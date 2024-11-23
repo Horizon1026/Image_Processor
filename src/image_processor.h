@@ -1,7 +1,7 @@
 #ifndef _IMAGE_PROCESSOR_H_
 #define _IMAGE_PROCESSOR_H_
 
-#include "datatype_basic.h"
+#include "basic_type.h"
 #include "datatype_image.h"
 
 namespace IMAGE_PROCESSOR {
