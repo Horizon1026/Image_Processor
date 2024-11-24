@@ -3,7 +3,7 @@
 
 #include "slam_log_reporter.h"
 #include "slam_memory.h"
-#include "visualizor.h"
+#include "visualizor_2d.h"
 
 using namespace SLAM_VISUALIZOR;
 
