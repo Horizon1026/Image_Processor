@@ -15,7 +15,7 @@ void TestDefault(const GrayImage &src_image, GrayImage &dst_image) {
     IMAGE_PROCESSOR::ImageProcessor processor;
     processor.Process(src_image, dst_image);
 
-    Visualizor::ShowImage("default process", dst_image);
+    Visualizor2D::ShowImage("default process", dst_image);
 }
 
 void TestCensus(const GrayImage &src_image, GrayImage &dst_image) {
@@ -24,7 +24,7 @@ void TestCensus(const GrayImage &src_image, GrayImage &dst_image) {
     IMAGE_PROCESSOR::CensusProcessor processor;
     processor.Process(src_image, dst_image);
 
-    Visualizor::ShowImage("census process", dst_image);
+    Visualizor2D::ShowImage("census process", dst_image);
 }
 
 void TestSCensus(const GrayImage &src_image, GrayImage &dst_image) {
@@ -33,14 +33,14 @@ void TestSCensus(const GrayImage &src_image, GrayImage &dst_image) {
     IMAGE_PROCESSOR::SCensusProcessor processor;
     processor.Process(src_image, dst_image);
 
-    Visualizor::ShowImage("s-census process", dst_image);
+    Visualizor2D::ShowImage("s-census process", dst_image);
 }
 
 int main(int argc, char **argv) {
     ReportInfo(YELLOW ">> Test image processor." << RESET_COLOR);
 
     GrayImage src_image;
-    Visualizor::LoadImage(src_image_path, src_image);
+    Visualizor2D::LoadImage(src_image_path, src_image);
 
     uint8_t *dst_buf = (uint8_t *)SlamMemory::Malloc(src_image.rows() * src_image.cols() * sizeof(uint8_t));
     GrayImage dst_image(dst_buf, src_image.rows(), src_image.cols(), true);
@@ -49,6 +49,6 @@ int main(int argc, char **argv) {
     TestCensus(src_image, dst_image);
     TestSCensus(src_image, dst_image);
 
-    Visualizor::WaitKey(0);
+    Visualizor2D::WaitKey(0);
     return 0;
 }
