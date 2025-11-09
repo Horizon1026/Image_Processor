@@ -5,7 +5,7 @@
 
 namespace image_processor {
 
-class CensusProcessor : public ImageProcessor {
+class CensusProcessor: public ImageProcessor {
 
 public:
     CensusProcessor() = default;
