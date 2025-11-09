@@ -4,7 +4,7 @@
 #include "basic_type.h"
 #include "datatype_image.h"
 
-namespace IMAGE_PROCESSOR {
+namespace image_processor {
 
 class ImageProcessor {
 
@@ -21,6 +21,6 @@ private:
     Mat kernel_ = Mat3::Ones();
 };
 
-}  // namespace IMAGE_PROCESSOR
+}  // namespace image_processor
 
 #endif  // end of _IMAGE_PROCESSOR_H_

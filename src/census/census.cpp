@@ -1,6 +1,6 @@
 #include "census.h"
 
-namespace IMAGE_PROCESSOR {
+namespace image_processor {
 
 bool CensusProcessor::Process(const GrayImage &src_image, GrayImage &dst_image) {
     if (src_image.data() == nullptr || dst_image.data() == nullptr) {
@@ -24,4 +24,4 @@ bool CensusProcessor::Process(const GrayImage &src_image, GrayImage &dst_image) 
     return true;
 }
 
-}  // namespace IMAGE_PROCESSOR
+}  // namespace image_processor

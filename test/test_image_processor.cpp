@@ -5,14 +5,14 @@
 #include "slam_memory.h"
 #include "visualizor_2d.h"
 
-using namespace SLAM_VISUALIZOR;
+using namespace slam_visualizor;
 
 std::string src_image_path = "../example/raw_image.png";
 
 void TestDefault(const GrayImage &src_image, GrayImage &dst_image) {
     ReportInfo(YELLOW ">> Test default image processor." << RESET_COLOR);
 
-    IMAGE_PROCESSOR::ImageProcessor processor;
+    image_processor::ImageProcessor processor;
     processor.Process(src_image, dst_image);
 
     Visualizor2D::ShowImage("default process", dst_image);
@@ -21,7 +21,7 @@ void TestDefault(const GrayImage &src_image, GrayImage &dst_image) {
 void TestCensus(const GrayImage &src_image, GrayImage &dst_image) {
     ReportInfo(YELLOW ">> Test census image processor." << RESET_COLOR);
 
-    IMAGE_PROCESSOR::CensusProcessor processor;
+    image_processor::CensusProcessor processor;
     processor.Process(src_image, dst_image);
 
     Visualizor2D::ShowImage("census process", dst_image);
@@ -30,7 +30,7 @@ void TestCensus(const GrayImage &src_image, GrayImage &dst_image) {
 void TestSCensus(const GrayImage &src_image, GrayImage &dst_image) {
     ReportInfo(YELLOW ">> Test census image processor." << RESET_COLOR);
 
-    IMAGE_PROCESSOR::SCensusProcessor processor;
+    image_processor::SCensusProcessor processor;
     processor.Process(src_image, dst_image);
 
     Visualizor2D::ShowImage("s-census process", dst_image);

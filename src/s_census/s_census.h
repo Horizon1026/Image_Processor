@@ -3,7 +3,7 @@
 
 #include "image_processor.h"
 
-namespace IMAGE_PROCESSOR {
+namespace image_processor {
 
 class SCensusProcessor : public ImageProcessor {
 
@@ -18,6 +18,6 @@ private:
     std::array<std::array<int32_t, 2>, 8> index_offset_ = {{{-1, -1}, {-1, 0}, {-1, 1}, {0, -1}, {0, 1}, {1, -1}, {1, 0}, {1, 1}}};
 };
 
-}  // namespace IMAGE_PROCESSOR
+}  // namespace image_processor
 
 #endif  // end of _IMAGE_PROCESSOR_S_CENSUS_H_

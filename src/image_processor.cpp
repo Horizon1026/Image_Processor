@@ -1,7 +1,7 @@
 #include "image_processor.h"
 #include "slam_log_reporter.h"
 
-namespace IMAGE_PROCESSOR {
+namespace image_processor {
 
 bool ImageProcessor::Process(const GrayImage &src_image, GrayImage &dst_image) {
     if (kernel_.rows() % 2 == 0 || kernel_.cols() % 2 == 0) {
@@ -34,4 +34,4 @@ bool ImageProcessor::Process(const GrayImage &src_image, GrayImage &dst_image) {
     return true;
 }
 
-}  // namespace IMAGE_PROCESSOR
+}  // namespace image_processor
