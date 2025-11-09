@@ -15,19 +15,9 @@ public:
     virtual bool Process(const GrayImage &src_image, GrayImage &dst_image) override;
 
 private:
-    std::array<std::array<int32_t, 2>, 8> index_offset_ = {{
-        {-1, -1},
-        {-1, 0},
-        {-1, 1},
-        {0, -1},
-        {0, 1},
-        {1, -1},
-        {1, 0},
-        {1, 1}
-    }};
-
+    std::array<std::array<int32_t, 2>, 8> index_offset_ = {{{-1, -1}, {-1, 0}, {-1, 1}, {0, -1}, {0, 1}, {1, -1}, {1, 0}, {1, 1}}};
 };
 
-}
+}  // namespace IMAGE_PROCESSOR
 
-#endif // end of _IMAGE_PROCESSOR_CENSUS_H_
+#endif  // end of _IMAGE_PROCESSOR_CENSUS_H_

@@ -22,8 +22,7 @@ bool ImageProcessor::Process(const GrayImage &src_image, GrayImage &dst_image) {
             float value = 0;
             for (int32_t drow = -row_bound_size; drow <= row_bound_size; ++drow) {
                 for (int32_t dcol = -col_bound_size; dcol <= col_bound_size; ++dcol) {
-                    value += static_cast<float>(src_image.GetPixelValueNoCheck(row + drow, col + dcol)) *
-                             kernel_(drow + row_bound_size, dcol + col_bound_size);
+                    value += static_cast<float>(src_image.GetPixelValueNoCheck(row + drow, col + dcol)) * kernel_(drow + row_bound_size, dcol + col_bound_size);
                 }
             }
             value /= kernel_.rows() * kernel_.cols();
@@ -35,4 +34,4 @@ bool ImageProcessor::Process(const GrayImage &src_image, GrayImage &dst_image) {
     return true;
 }
 
-}
+}  // namespace IMAGE_PROCESSOR

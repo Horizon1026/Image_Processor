@@ -21,6 +21,6 @@ private:
     Mat kernel_ = Mat3::Ones();
 };
 
-}
+}  // namespace IMAGE_PROCESSOR
 
-#endif // end of _IMAGE_PROCESSOR_H_
+#endif  // end of _IMAGE_PROCESSOR_H_

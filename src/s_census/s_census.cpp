@@ -29,4 +29,4 @@ bool SCensusProcessor::Process(const GrayImage &src_image, GrayImage &dst_image)
     return true;
 }
 
-}
+}  // namespace IMAGE_PROCESSOR
