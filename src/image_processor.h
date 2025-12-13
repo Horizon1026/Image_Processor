@@ -13,6 +13,7 @@ public:
     virtual ~ImageProcessor() = default;
     ImageProcessor(const ImageProcessor &image_processor) = delete;
 
+    virtual std::string ImageProcessorTypeName() const { return "None"; }
     virtual bool Process(const GrayImage &src_image, GrayImage &dst_image);
 
     Mat &kernel() { return kernel_; }

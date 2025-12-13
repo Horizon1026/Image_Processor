@@ -12,6 +12,7 @@ public:
     virtual ~CensusProcessor() = default;
     CensusProcessor(const CensusProcessor &image_processor) = delete;
 
+    virtual std::string ImageProcessorTypeName() const override { return "kCensus"; }
     virtual bool Process(const GrayImage &src_image, GrayImage &dst_image) override;
 
 private:
