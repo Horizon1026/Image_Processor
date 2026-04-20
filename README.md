@@ -9,7 +9,12 @@ Intergration of some simple image processor method.
 - [ ] Gauss transform
 
 # Dependence
+
+### 项目仓库依赖（源码在 repo 中）
 - Slam_Utility
+
+### 第三方仓库依赖
+- Eigen3 (>= 3.3.7)（`sudo apt install libeigen3-dev`）
 
 # Compile and Run
 - 第三方仓库的话需要自行 apt-get install 安装
