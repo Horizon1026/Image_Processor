@@ -8,6 +8,11 @@ namespace image_processor {
 class CensusProcessor: public ImageProcessor {
 
 public:
+    struct Options {
+        bool kEnableSimd = true;
+    };
+
+public:
     CensusProcessor() = default;
     virtual ~CensusProcessor() = default;
     CensusProcessor(const CensusProcessor &image_processor) = delete;
@@ -15,7 +20,10 @@ public:
     virtual std::string ImageProcessorTypeName() const override { return "kCensus"; }
     virtual bool Process(const GrayImage &src_image, GrayImage &dst_image) override;
 
+    Options &options() { return options_; }
+
 private:
+    Options options_;
     std::array<std::array<int32_t, 2>, 8> index_offset_ = {{{-1, -1}, {-1, 0}, {-1, 1}, {0, -1}, {0, 1}, {1, -1}, {1, 0}, {1, 1}}};
 };
 

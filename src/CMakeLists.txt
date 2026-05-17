@@ -31,6 +31,7 @@ target_include_directories( lib_image_processor PUBLIC
     .
     ./census
     ./s_census
+    ${SLAM_UTILITY_PATH}/src/math
 )
 target_link_libraries( lib_image_processor
     lib_slam_utility_basic_type
