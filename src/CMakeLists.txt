@@ -20,17 +20,20 @@ endif()
 # Add all methods.
 aux_source_directory( census SRC_METHOD_CENSUS )
 aux_source_directory( s_census SRC_METHOD_S_CENSUS )
+aux_source_directory( histogram_equalization SRC_METHOD_HISTOGRAM_EQUALIZATION )
 
 # Link the library.
 add_library( lib_image_processor
     ${AUX_SRC_IMAGE_PROCESSOR}
     ${SRC_METHOD_CENSUS}
     ${SRC_METHOD_S_CENSUS}
+    ${SRC_METHOD_HISTOGRAM_EQUALIZATION}
 )
 target_include_directories( lib_image_processor PUBLIC
     .
     ./census
     ./s_census
+    ./histogram_equalization
 )
 target_link_libraries( lib_image_processor
     lib_slam_utility_basic_type

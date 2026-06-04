@@ -5,6 +5,7 @@
 
 namespace image_processor {
 
+/* Class SCensusProcessor Declaration. */
 class SCensusProcessor: public ImageProcessor {
 
 public:

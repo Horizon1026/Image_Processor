@@ -15,6 +15,7 @@ public:
 
     virtual std::string ImageProcessorTypeName() const { return "None"; }
     virtual bool Process(const GrayImage &src_image, GrayImage &dst_image);
+    bool Process(GrayImage &image) { return Process(image, image); }
 
     Mat &kernel() { return kernel_; }
 
