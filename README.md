@@ -5,6 +5,7 @@ Intergration of some simple image processor method.
 - [x] General kernel transform
 - [x] Census transform
 - [x] S-Census transform
+- [x] Histogram equalization transform
 - [ ] Gabor transform
 - [ ] Gauss transform
 
@@ -12,6 +13,7 @@ Intergration of some simple image processor method.
 
 ### 项目仓库依赖（源码在 repo 中）
 - Slam_Utility
+- Visualizor2D（only for test）
 
 ### 第三方仓库依赖
 - Eigen3 (>= 3.3.7)（`sudo apt install libeigen3-dev`）
