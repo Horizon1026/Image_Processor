@@ -1,4 +1,5 @@
 #include "image_processor.h"
+
 #include "slam_log_reporter.h"
 
 #include "algorithm"
