@@ -6,7 +6,7 @@
 namespace image_processor {
 
 /* Class HistogramEqualizationProcessor Declaration. */
-class HistogramEqualizationProcessor : public ImageProcessor {
+class HistogramEqualizationProcessor: public ImageProcessor {
 
 public:
     HistogramEqualizationProcessor() = default;
