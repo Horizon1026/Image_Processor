@@ -48,7 +48,7 @@ bool HistogramEqualizationProcessor::Process(const GrayImage &src_image, GrayIma
     // skip equalization and copy src to dst as-is.
     if (cdf_min < 0 || cdf[255] <= cdf_min) {
         uint8_t *dst_data = dst_image.data();
-        std::memcpy(dst_data, src_data, static_cast<size_t>(total_pixels) * sizeof(uint8_t));
+        std::memcpy(dst_data, src_data, static_cast<uint32_t>(total_pixels) * sizeof(uint8_t));
         return true;
     }
 
